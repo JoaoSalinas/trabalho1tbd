@@ -1,0 +1,93 @@
+<div class="mb-6">
+  <label
+    for="patient"
+    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+    >Paciente</label
+  >
+  <select
+    id="patient_{{code}}"
+    name="patient"
+    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+  >
+  {{#patients}}
+    <option value="{{code}}">{{name}}</option>
+  {{/patients}}
+  </select>
+</div>
+
+<div class="mb-6">
+  <label
+    for="employee"
+    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+    >Funcionário</label
+  >
+  <select
+    id="employee"
+    name="employee"
+    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+  >
+  {{#employees}}
+    <option value="{{code}}">{{name}}</option>
+  {{/employees}}
+  </select>
+</div>
+
+<div class="mb-6">
+  <label
+    for="date"
+    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+    >Data</label
+  >
+  <input
+    type="date"
+    id="date"
+    name="date"
+    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    placeholder="Informe a data"
+  ></input>
+</div>
+
+<div class="mb-6">
+  <label
+    for="time"
+    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+    >Hora</label
+  >
+  <input
+    type="time"
+    id="time"
+    name="time"
+    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    placeholder="Informe a hora"
+  ></input>
+</div>
+
+<div class="mb-6">
+  <label
+    for="diagnostic"
+    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+    >Diagnóstico</label
+  >
+  <textarea
+    id="diagnostic"
+    name="diagnostic"
+    rows="4"
+    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    placeholder="Informe o diagnostico"
+  ></textarea>
+</div>
+
+<div class="mb-6">
+  <label
+    for="observation"
+    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+    >Observações</label
+  >
+  <textarea
+    id="observation"
+    name="observation"
+    rows="4"
+    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    placeholder=""
+  ></textarea>
+</div>

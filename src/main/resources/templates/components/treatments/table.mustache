@@ -1,0 +1,94 @@
+
+<div class="overflow-x-auto shadow-md sm:rounded-lg mt-8">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>               
+                <th scope="col" class="px-6 py-3">
+                    Código
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Paciente
+                </th>
+                <th scope="col" class="pr-6 py-3">
+                    Funcionario
+                </th>
+                <th scope="col" class="pr-6 py-3">
+                    Data
+                </th>
+                <th scope="col" class="pr-6 py-3">
+                    Hora
+                </th>
+                <th scope="col" class="pr-6 py-3">
+                    Diagnóstico
+                </th>
+                <th scope="col" class="pr-6 py-3">
+                    Observações
+                </th>
+                <th scope="col" class="pr-6 py-3">
+                    Ações
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#treatments}}
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <form action="/atendimentos/atualizar/{{code}}" method="post">
+
+                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{ code }}
+                </td>
+                <td class="px-6 py-4">
+                    <select id="patients_{{code}}"  name="patient" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="{{patient.code}}">{{patient.name}}</option>    
+                        {{#patients}}    
+                        <option value="{{code}}">{{name}}</option>    
+                        {{/patients}}
+                    </select>                   
+                </td>
+                <td class="px-6 py-4" name="employee">
+                    <select id="employees_{{code}}"  name="employee" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="{{employee.code}}">{{employee.name}}</option>    
+                        {{#employees}}    
+                        <option value="{{code}}">{{name}}</option>    
+                        {{/employees}}
+                    </select>                  
+                </td>
+                <td class="px-6 py-4">
+                    <input
+                    type="date"
+                    id="date"
+                    name="date"
+                    value="{{dateFormatted}}"                    
+                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Informe a data" />
+                </td>
+                <td class="px-6 py-4">
+                    <input
+                    type="time"
+                    id="time"
+                    name="time"
+                    value="{{timeFormatted}}"                    
+                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Informe a hora" />
+                </td>
+                <td class="px-6 py-4">
+                    <input type="text" value="{{diagnostic}}" name="diagnostic"/>
+                </td>
+                <td class="px-6 py-4">
+                    <input type="text" value="{{observation}}" name="observation"/>
+                </td>
+                <td class="flex items-center py-4 space-x-3">   
+                    <button type="submit"
+                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                    data-te-ripple-color="light">Editar</button>
+                    </form>
+                    
+                    <form action="/atendimentos/deletar/{{code}}" method="post" class="m-0">
+                        <button type="submit" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remover</button>
+                    </form>
+                </td>
+            </tr>
+            {{/treatments}}
+        </tbody>
+    </table>
+</div>

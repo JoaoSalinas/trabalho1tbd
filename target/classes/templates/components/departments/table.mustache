@@ -1,0 +1,44 @@
+
+<div class="overflow-x-auto shadow-md sm:rounded-lg mt-8">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>               
+                <th scope="col" class="px-6 py-3">
+                    Código
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Descrição
+                </th>
+                <th scope="col" class="pr-6 py-3">
+                    Ações
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#departments}}
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <form action="/setores/atualizar/{{code}}" method="post">
+                
+                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{code}}
+                </td>
+                <td class="px-6 py-4">
+                    <input type="text" value="{{description}}" name="description">
+                    
+                </td>                
+                <td class="flex items-center py-4 space-x-3">    
+                    
+                        <button type="submit"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        data-te-ripple-color="light">Editar</button>
+                    </form>
+
+                    <form action="/setores/deletar/{{code}}" method="post" class="m-0">
+                        <button type="submit" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remover</button>
+                    </form>
+                    </td>
+            </tr>
+            {{/departments}}
+        </tbody>
+    </table>
+</div>

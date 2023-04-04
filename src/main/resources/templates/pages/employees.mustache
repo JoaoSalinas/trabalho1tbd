@@ -1,0 +1,16 @@
+<html>
+  {{>../base/head}}
+  <title>Hospital TBD</title>
+  <body class="flex flex-col justify-between h-screen">
+    <div class="lg:px-36 py-8">
+      {{>../base/nav}}
+      <div class="flex flex-col items-end	justify-center">      
+        {{>../components/employees/modal}}
+      </div>
+      <p class="text-xs text-black-400">Os inputs editáveis podem ser editados diretamente na tabela, e são atualizados ao clicar na ação "Editar" ou apertar o botão "Enter"</p>
+      <p class="text-xs text-red-400">Certifique-se que o funcionário que está tentando excluir não está vinculado a um atendimento. Nesse caso o sistema não o removerá.</p>
+      {{>../components/employees/table}}
+    </div>
+    {{>../base/footer}}
+  </body>
+</html>

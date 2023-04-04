@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- -*- mode: html -*- -->
+<html>
+  {{>../base/head}}
+  <title>Hospital TBD</title>
+  <body class="flex flex-col justify-between h-screen">
+    <div class="lg:px-36 py-8">
+      {{>../base/nav}}
+      <h2>Trabalho 1 - JPA</h2>
+      <p>Desenvolva um sistema de atendimento para um hospital.</p>
+      <ul class="pl-5 mt-2 space-y-1 list-disc list-inside">
+        <li>
+          O hospital tem funcionários (médicos, enfermeiras e etc.) que atendem
+          pacientes;
+        </li>
+
+        <li>Cada funcionário tem um código, um nome, um email e uma senha;</li>
+
+        <li>
+          Um funcionário pode atender diversos pacientes que, por sua vez, pode
+          ser atendimento por diversos funcionários;
+        </li>
+
+        <li>
+          Cada atendimento tem um código, uma data/hora, um funcionário
+          responsável, um paciente e um campo com observações e/ou diagnóstico;
+        </li>
+
+        <li>
+          Cada funcionário é de um setor (cardiologia, traumatologia e etc.);
+        </li>
+
+        <li>Todo setor tem um código e uma descrição;</li>
+
+        <li>Um setor pode ter diversos funcionários;</li>
+      </ul>
+
+      <h3>Exigências:</h3>
+      <ul class="pl-5 mt-2 space-y-1 list-disc list-inside">
+        <li>
+          Implementação das operações CRUD para todas as classes do sistema;
+        </li>
+        <li>Utilizar anotações JPA;</li>
+        <li>Utilizar PostgreSQL como base de dados;</li>
+      </ul>
+
+      <h3>Observações:</h3>
+      <ul class="pl-5 mt-2 space-y-1 list-disc list-inside">
+        <li>O sistema pode funcionar pelo terminal;</li>
+      </ul>
+
+      <h3>Valor: <span>3.0</span></h3>
+
+      <h3>Extra: <span>+0.5 Usar alguma GUI (web, desktop, etc)</span></h3>
+
+      <h3>Prazo: <span>28/03</span></h3>
+    </div>
+    {{>../base/footer}}
+  </body>
+</html>
